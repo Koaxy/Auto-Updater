@@ -24,10 +24,10 @@ namespace Koaxy_Auto_Updater
         static public async Task DownloadLatestVers()
         {
 
-            string DownloadDataV2 = await wc.DownloadStringTaskAsync("https://koaxyhosting.xyz/KoaxyGTA/KoaxyMenuVers.txt");
+            string DownloadDataV2 = await wc.DownloadStringTaskAsync("https:://yoursite.yaya");
             try
             {
-                await wc.DownloadFileTaskAsync("https://koaxyhosting.xyz/KoaxyGTA/" + DownloadDataV2 + ".rar", YourThingToAutoUpdate + "\\KoaxyMenu.rar");
+                await wc.DownloadFileTaskAsync("https:://yoursite.yaya" + DownloadDataV2 + ".rar", YourThingToAutoUpdate + "\\Yes.zip");
             }
             catch (Exception ex)
             {
@@ -37,7 +37,7 @@ namespace Koaxy_Auto_Updater
         async void Magic()
         {
             WebClient wc = new WebClient();
-            string MunchKin = wc.DownloadString("https://koaxyhosting.xyz/KoaxyGTA/KoaxyMenuVers.txt");
+            string MunchKin = wc.DownloadString("https:://yoursite.yaya");
 
             if (!File.Exists(YourThingToAutoUpdate + "\\YourThingToAutoUpdate.rar"))
             {
@@ -119,7 +119,7 @@ namespace Koaxy_Auto_Updater
                 IsValid = false;
                 Console.WriteLine("Koaxy menu is outdated.. updating");
                 await DownloadLatestVers();
-                //await wc.DownloadFileTaskAsync("https://koaxyhosting.xyz/KoaxyGTA/" + DownloadData + ".rar", KoaxyGTAFolder + "\\KoaxyMenu.rar");
+               
                 Console.WriteLine("The update was Successful!");
             }
             if (!IsValid)
